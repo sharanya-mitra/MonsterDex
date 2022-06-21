@@ -1,8 +1,9 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
 import { Component } from "react";
 class App extends Component {
+  
   constructor() {
     super();
     this.state = {
@@ -18,15 +19,14 @@ class App extends Component {
         })
       );
   }
+
+
   render() {
+
     return (
       <div className="App">
-        <input
-          className="search-box"
-          type="search"
-          placeholder="Search Monsters"
-          onChange={(event) => {
-            console.log(event.target.value);
+        <input className="search-box" type="search" placeholder="Search Monsters"
+          onChange={(event) => {console.log(event.target.value);
             const searchstring = event.target.value.toLocaleLowerCase();
             const filteredmonster = this.state.monster.filter((monsters)=>{
               return monsters.name.toLocaleLowerCase().includes(searchstring);
