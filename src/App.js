@@ -1,4 +1,5 @@
 // import logo from "./logo.svg";
+import CardList from './Components/Card-List/card-list.components'
 import "./App.css";
 // import { render } from "@testing-library/react";
 import { Component } from "react";
@@ -19,9 +20,17 @@ class App extends Component {
         })
       );
   }
+  onSearchChange = (event)=>{
+    const searchFild = event.target.value.toLocaleLowerCase();
+    this.setState(()=>{
+      return {searchFild};
+    });
+  };
   render() {
-    const filteredmonster = this.state.monster.filter((monsters)=>{
-      return monsters.name.toLocaleLowerCase().includes(this.state.searchFild);
+    const {monster,searchFild} =this.state;
+    const {onSearchChange} =this;
+    const filteredmonster = monster.filter((monsters)=>{
+      return monsters.name.toLocaleLowerCase().includes(searchFild);
     });
     return (
       <div className="App">
@@ -29,24 +38,11 @@ class App extends Component {
           className="search-box"
           type="search"
           placeholder="Search Monsters"
-          onChange={(event) => {
-            console.log(event.target.value);
-            const searchFild = event.target.value.toLocaleLowerCase();
-            this.setState(()=>{
-              return {searchFild};
-            });
-            }}
+          onChange={onSearchChange}
         />
-        {filteredmonster.map((monster) => {
-          return (
-            <div key={monster.id}>
-              <h1>{monster.name}</h1>
-            </div>
-          );
-        })}
+      <CardList monster={filteredmonster}/> 
       </div>
     );
   }
 }
-
 export default App;
