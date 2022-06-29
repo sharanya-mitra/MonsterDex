@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MonsterDex/static/css/main.f012354b.css",
+    "main.js": "/MonsterDex/static/js/main.6d006303.js",
+    "static/js/787.99774d08.chunk.js": "/MonsterDex/static/js/787.99774d08.chunk.js",
+    "index.html": "/MonsterDex/index.html",
+    "main.f012354b.css.map": "/MonsterDex/static/css/main.f012354b.css.map",
+    "main.6d006303.js.map": "/MonsterDex/static/js/main.6d006303.js.map",
+    "787.99774d08.chunk.js.map": "/MonsterDex/static/js/787.99774d08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f012354b.css",
+    "static/js/main.6d006303.js"
+  ]
+}
